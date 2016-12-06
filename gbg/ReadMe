@@ -1,0 +1,23 @@
+Readme
+Fri Nov 11, 2016  9:55 AM
+
+The code directory is where the code lives.
+
+The Arduino directory has the Arduino code
+SmartPhone directory has smart phone code
+
+Staging is where libraries are saved.  They are saved here as a convenience
+for the various libraries required by the features we use.
+
+Testcode is for hacking and, well, testing.
+
+Program structure:
+
+under Arduino/gbg is the main Arduino code set.
+  The way I like to develop is with an external editor and breaking
+	the code into modules.  The ino is required for the IDE to be used.
+	the cpp code is actually where most of the working code, in modules,
+	is.  Thus the bluetooth code is in it's own module and writing code
+	for control doesn't mess with that.
+
+Check this file from time to time for updates or comments.
