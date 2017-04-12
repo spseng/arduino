@@ -17,7 +17,7 @@ defines to cross the source files
 /* tbd: check pwm frequncy-- either 490 or 980 Hz */
 #define SPEED_POT A0
 #define RANGE_SENSOR A1
-#define POT_IN A5
+#define OP_IN A5
 
 
 /**************************************************************************
