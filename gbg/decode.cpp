@@ -37,13 +37,24 @@ int decode(int code)
             switch(flags) {
                 case 0x02:
                     Serial.println("action = 1");
-                    
+                    if (relayStatus == false) {
+                        relayStatus = true;
+                        digitalWrite(RUN_RELAY_DRV, 1);
+                    }
                     break;
                 case 0x04:
                     Serial.println("action = 2");
+                    if (relayStatus == true) {
+                        relayStatus = false;
+                        digitalWrite(RUN_RELAY_DRV, 0);
+                    }
                     break;
                 case 0x08:
                     Serial.println("action = 3");
+                    if (buttonStatus == true) and (relayStatus == true) {
+                        relayStatus = false;
+                        digitalWrite(RUN_RELAY_DRV, 0);
+                    }
                     break;
                 case 0x10:
                     Serial.println("action = 4");
