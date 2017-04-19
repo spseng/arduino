@@ -181,6 +181,8 @@ int localTime;
 int buttonStatus = 0x0;
 int  oldButtonStatus = 0xffff;
 int result = 0;
+int go = 0;
+int okaytogo = 0;
 
 void loop(void)
 {
@@ -199,9 +201,24 @@ void loop(void)
 
     potVolts = analogRead(POT_IN);
     analogWrite(POT_DRV, potVolts / 4);
+ 
+   range = analogRead(RANGE_SENSOR)
+   if (range > ) {
+   okaytogo = true;
+   }
+   else {
+   okaytogo = false;
+   }
 
-    
-#if 0    
+   go = analogRead(OP_1); 
+   if ((go > 500) && (oktogo = true)){
+        digitalWrite(RUN_RELAY_DRV, 1);
+   }
+   else {
+        digitalWrite(RUN_RELAY_DRV, 0);
+   }
+        
+        
     Serial.print(F("potVolts: "));
     Serial.println(potVolts);
 #endif
