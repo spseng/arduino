@@ -48,29 +48,25 @@ void checkPhone(void)
         Serial.println(blue, HEX);
     }
 
-/**************************************************************************
- * Buttons
- * There are 8 buttons available on the phone application.  This is what
- * is used to control GBG.  All the rest of the code is left for reference
-**************************************************************************/
-
+       // Buttons
     if (packetbuffer[1] == 'B') {
         uint8_t buttnum = packetbuffer[2] - '0';
         boolean pressed = packetbuffer[3] - '0';
-        Serial.print ("Button "); Serial.print(buttnum, HEX);
-        Serial.print(" ");
+        Serial.print ("Button "); Serial.println(buttnum, HEX);
         
         if (pressed) {
-            Serial.print(1 << buttnum, HEX);
+            Serial.println(1 << buttnum, HEX);
+            
             buttonStatus |= (1 << buttnum);
-            Serial.print(" pressed  ");
+            Serial.println(" pressed  ");
         } else {
             buttonStatus &= (~(1 << buttnum));
-            Serial.print((~(1 << buttnum)), HEX);
-            Serial.print(" released  ");
+            Serial.println((~(1 << buttnum)), HEX);
+            
+            Serial.println(" released  ");
         }
-        Serial.print(" buttonStatus ");
-        Serial.print( buttonStatus, HEX);
+        Serial.println(buttonStatus, HEX);
+        
     }
 
        // GPS Location
